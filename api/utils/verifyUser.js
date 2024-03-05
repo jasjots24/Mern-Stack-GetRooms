@@ -2,7 +2,7 @@ import JWT from "jsonwebtoken";
 import { errorHandler } from "./error.js";
 
 export const verifyToken = (req, res, next) => {
-  const token = req.cookies.acess_token;
+  const token = req.cookies.access_token;
   if (!token) return next(errorHandler(401, "Unauthorized"))
 
   JWT.verify(token, process.env.JWT_SECERT, (err, user) => {
