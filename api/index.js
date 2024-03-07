@@ -19,11 +19,13 @@ const app= express();
 app.use(express.json());;
 app.use(cookieParser())
 
-app.listen(3000,()=>{
-    console.log("server is running on 3000");
-}
-);
 
+const PORT = 5000; // Or any other available port
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+  
 app.use("/api/user",userRouter);
 app.use("/api/auth/", authRouter);
 app.use("/api/listing", listingRouter);
