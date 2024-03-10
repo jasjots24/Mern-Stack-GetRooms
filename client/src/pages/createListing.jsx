@@ -5,7 +5,7 @@ import {
   ref,
   uploadBytesResumable,
 } from 'firebase/storage';
-import { app } from '../firebase';
+import {app} from '../../firebase.js'
 import { set } from 'mongoose';
 
 export default function CreateListing() {
