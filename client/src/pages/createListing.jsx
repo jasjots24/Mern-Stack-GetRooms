@@ -27,7 +27,8 @@ export default function CreateListing() {
     parking: false,
     furnished: false,
   });
-  const [imageUploadError, setImageUploadError] = useState(false);
+  
+const [imageUploadError, setImageUploadError] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -128,8 +129,8 @@ export default function CreateListing() {
     try {
       if (formData.imageUrls.length < 1)
         return setError('You must upload at least one image');
-      if (+formData.regularPrice < +formData.discountPrice)
-        return setError('Discount price must be lower than regular price');
+      if (+formData.regularPrice < +formData.Negotiation)
+        return setError('Negotiation must be lower than regular price');
       setLoading(true);
       setError(false);
       const res = await fetch('/api/listing/create', {
@@ -288,17 +289,17 @@ export default function CreateListing() {
               <div className='flex items-center gap-2'>
                 <input
                   type='number'
-                  id='discountPrice'
+                  id='Negotiation'
                   min='0'
                   max='10000000'
                   required
                   className='p-3 border border-gray-300 rounded-lg'
                   onChange={handleChange}
-                  value={formData.discountPrice}
+                  value={formData.Negotiation}
                 />
-                <div className='flex flex-col items-center'>
-                  <p>Discounted price</p>
-                  <span className='text-xs'>($ / month)</span>
+                 <div className='flex flex-col items-center'>
+                 <p>Negotiation</p>
+                 <span className='text-xs'>($ / month)</span>
                 </div>
               </div>
                )}
@@ -337,7 +338,7 @@ export default function CreateListing() {
               <div
                 key={url}
                 className='flex justify-between p-3 border items-center'
-              > 
+              >
                 <img
                   src={url}
                   alt='listing image'
