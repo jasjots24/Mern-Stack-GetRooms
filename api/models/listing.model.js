@@ -22,6 +22,18 @@ const listingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    vacantFloor:{
+      type: Number,
+      required: true,
+    },
+    area:{
+      type:Number,
+      required:true,
+    },
+    Bhk:{
+      type:Number,
+      required:true,
+    },
     bathrooms: {
       type: Number,
       required: true,
