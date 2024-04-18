@@ -27,7 +27,7 @@ export default function Header() {
       <div className='flex justify-between item-center max-w-7xl mx-auto p-3'>
         <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
           <span className='text-slate-500'>Get</span>
-          <span className='text-slate-700'>Room</span>
+          <span className='text-slate-700'>Room.in</span>
         </h1>
         <form
           onSubmit={handleSubmit}
